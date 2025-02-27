@@ -1,0 +1,15 @@
+{
+ "type": "header",
+ "name": "Header Group",
+ "sections": {
+   "header": {
+     "type": "header",
+     "settings": {}
+   },
+   "navigation":{
+    "type": "navigation",
+    "settings": {}
+   }
+ },
+ "order": ["header","navigation"]
+}

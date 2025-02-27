@@ -1,0 +1,36 @@
+<section class="bg-gray-100 hidden md:block">
+  {% comment %} section wrapper {% endcomment %}
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-8 lg:px-0 gap-12 py-4">
+    {% for link in section.settings.link_list.links %}
+      {% if link.links != blank %}
+        <div>
+          <button class="flex justify-center items-center gap-2">{{ link.title }} {% render 'icon-chevron-down' %}
+          </button>
+          <a href="{{ link.url  }}"></a>
+        </div>
+      {% else %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Navigation",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "link_list",
+        "label": "link_list",
+        "default": "main-menu"
+      }
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Navigation"
+      }
+    ]
+  }
+{% endschema %}

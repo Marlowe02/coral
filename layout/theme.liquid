@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+    {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    {% sections 'header-group' %}
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>

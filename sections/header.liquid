@@ -1,0 +1,64 @@
+{% if section.settings.show_announcement %}
+  <section class="bg-gray-100">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-8 lg:px-0 border-b-1 border-gray-300">
+      {% comment %} left {% endcomment %}
+      <div>{% render 'icon-search' %}</div>
+      {% comment %} center {% endcomment %}
+      <div class="md:pl-[165px]">
+        {% if section.settings.logo_img %}
+          <a href="{{ shop.url }}">
+            <img
+              src="{{section.settings.logo_img |  image_url }}"
+              alt=""
+              width=""
+              height=""
+              class="h-[120xp] w-[150px]"></a>
+        {% else %}
+        {% endif %}
+      </div>
+      {% comment %} right {% endcomment %}
+      <div class="flex gap-6">
+        {% comment %} user login {% endcomment %}
+        <div class="hidden md:block">
+          {% if shop.customer_accounts_enabled %}
+            <a href="{{ routes.account_login_url }}" class="flex gap-2 justify-center items-center">{% render 'icon-user' %}
+              <p>Account</p>
+            </a>
+          {% endif %}
+        </div>
+        {% comment %} shopping {% endcomment %}
+        <div>
+          <a href="{{ routes.cart_url }}" class="flex gap-2 justify-center items-center">
+            {% render 'icon-shopping-bag' %}
+            <p class="hidden md:block">Shopping</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Header",
+
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show announcement",
+        "default": true
+      }, {
+        "type": "image_picker",
+        "id": "logo_img",
+        "label": "Logo image"
+      }
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+  }
+{% endschema %}
