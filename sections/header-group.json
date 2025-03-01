@@ -9,7 +9,8 @@
    "navigation":{
     "type": "navigation",
     "settings": {}
-   }
+   },
+   
  },
  "order": ["header","navigation"]
 }

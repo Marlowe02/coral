@@ -4,12 +4,13 @@
     {% for link in section.settings.link_list.links %}
       {% if link.links != blank %}
         <div>
-          <button class="flex justify-center items-center gap-2">{{ link.title }} {% render 'icon-chevron-down' %}
-          </button>
-          <a href="{{ link.url  }}"></a>
+          <a href="{{ link.url  }}">
+            <button class="flex justify-center items-center gap-2 ">{{ link.title }} {% render 'icon-chevron-down' %}
+            </button>
+          </a>
         </div>
       {% else %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        <a href="{{ link.url }}" class="">{{ link.title }}</a>
       {% endif %}
     {% endfor %}
   </div>
