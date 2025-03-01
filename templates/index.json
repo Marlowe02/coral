@@ -3,6 +3,10 @@
     "banner":{
       "type":"banner",
       "settings":{}
+    },
+    "brands":{
+      "type":"brands",
+      "settings": {}
     }
-  }, "order": ["banner"]
+  }, "order": ["banner","brands"]
 }

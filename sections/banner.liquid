@@ -1,6 +1,122 @@
+<section class="bg-gray-100 relative py-12">
+  {% if section.settings.bg_img_1 %}
+    <img
+      draggable="false"
+      src="{{section.settings.bg_img_1 | image_url}}"
+      alt=""
+      height=""
+      width=""
+      class="h-18  w-18 object-cover absolute bottom-18 left-0  ">
+  {% endif %}
+  {% if section.settings.bg_img_2 %}
+    <img
+      draggable="false"
+      src="{{section.settings.bg_img_2 | image_url}}"
+      alt=""
+      height=""
+      width=""
+      class="h-48  w-32 object-contain
+       absolute right-0 bottom-32 ">
+  {% endif %}
+
+  <div class="max-w-7xl mx-auto grid grid-cols-2 justify-between items-center py-4 px-8 lg:px-0 ">
+    <div class="flex flex-col">
+      {% for block in section.blocks %}
+        {% if block.type == 'heading-text' %}
+          <h2 class="text-[60px] tracking-wider">{{ block.settings.heading }}</h2>
+        {% elsif block.type == 'sub-text' %}
+          <p class="text-slate-500 text-lg mt-12 max-w-[520px] leading-9 ">{{ block.settings.sub_text }}</p>
+        {% elsif block.type == 'button' %}
+          <a href="{{ block.settings.btn_url }}">
+            <button class="mt-12 bg-slate-900 text-white py-3 px-7 cursor-pointer flex justify-center items-center gap-2 hover:text-slate-800 hover:bg-white border-2 border-slate-900 duration-150 transition-all">
+              <i>{% render 'icon-shopping-bag' %}</i>
+              {{ block.settings.btn_text }}</button>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="pl-32">
+      <div class=" border border-slate-300 z-10 inline-block rounded-tl-[150px]  rounded-br-[120px] relative">
+        <img
+          draggable="false"
+          src="{{section.settings.hero_img | image_url }}"
+          alt=""
+          height=""
+          width=""
+          class=" object-contain h-[450px]  -mt-6 -ml-6">
+      </div>
+    </div>
+  </div>
+</section>
+
 {% schema %}
   {
-    "name": "",
-    "settings": []
+    "name": "Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Images"
+      }, {
+        "type": "image_picker",
+        "id": "hero_img",
+        "label": "Hero image"
+      }, {
+        "type": "image_picker",
+        "id": "bg_img_1",
+        "label": "Background image 1"
+      }, {
+        "type": "image_picker",
+        "id": "bg_img_2",
+        "label": "Background image 2"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "heading-text",
+        "name": "Heading text",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading text",
+            "default": " Style with fashion"
+          }
+        ]
+      }, {
+        "type": "sub-text",
+        "name": "Sub text",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "text",
+            "id": "sub_text",
+            "label": "Sub text",
+            "default": " you can explore ans shop many differnt collection from various barands here "
+          }
+        ]
+      }, {
+        "type": "button",
+        "name": "Button",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button link"
+          }, {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button text",
+            "default": " Shop now!"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner"
+      }
+    ]
   }
 {% endschema %}
