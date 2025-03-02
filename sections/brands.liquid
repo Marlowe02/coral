@@ -14,7 +14,7 @@
         alt=""
         height=""
         width=""
-        class="h-12 w-24"
+        class="h-14 w-[200px] object-contain"
         draggable="false">
     {% endif %}
   {% endfor %}
@@ -24,6 +24,9 @@
 {% schema %}
   {
     "name": "brands",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
     "settings": [],
     "blocks": [
       {

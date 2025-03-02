@@ -1,16 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
- "type": "header",
- "name": "Header Group",
- "sections": {
-   "header": {
-     "type": "header",
-     "settings": {}
-   },
-   "navigation":{
-    "type": "navigation",
-    "settings": {}
-   },
-   
- },
- "order": ["header","navigation"]
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_img": "shopify://shop_images/logo.png"
+      }
+    },
+    "navigation": {
+      "type": "navigation",
+      "settings": {
+        "link_list": "coral-menu"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "navigation"
+  ]
 }
