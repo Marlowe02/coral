@@ -1,4 +1,4 @@
-<section class="max-w-7xl mx-auto flex justify-between items-center px-8 lg:px-0 gap-12 py-4">
+<section class="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-8 lg:px-0 gap-12 py-12">
   {% for block in section.blocks %}
     {% if block.settings.brand_img %}
       <img
@@ -6,14 +6,16 @@
         alt=""
         height=""
         width=""
-        class="h-12 w-24 object-contain">
+        class="h-14 w-[200px] object-contain"
+        draggable="false">
     {% else %}
       <img
         src="{{ 'df.brand.png' | asset_url }}"
         alt=""
         height=""
         width=""
-        class="h-12 w-24">
+        class="h-14 w-[200px] object-contain"
+        draggable="false">
     {% endif %}
   {% endfor %}
 </section>
@@ -22,6 +24,9 @@
 {% schema %}
   {
     "name": "brands",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
     "settings": [],
     "blocks": [
       {

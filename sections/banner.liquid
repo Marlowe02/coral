@@ -52,6 +52,9 @@
 {% schema %}
   {
     "name": "Banner",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
     "settings": [
       {
         "type": "header",
@@ -115,7 +118,18 @@
     ],
     "presets": [
       {
-        "name": "Banner"
+        "name": "Banner",
+        "blocks": [
+          {
+            "type": "heading-text"
+          },
+          {
+            "type": "sub-text"
+          },
+          {
+            "type": "button"
+          },
+        ]
       }
     ]
   }

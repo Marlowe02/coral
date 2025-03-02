@@ -19,11 +19,15 @@
 {% schema %}
   {
     "name": "Navigation",
+    "enabled_on": {
+      "groups": ["header"]
+    },
+    "limit": 1,
     "settings": [
       {
         "type": "link_list",
         "id": "link_list",
-        "label": "link_list",
+        "label": "Menu",
         "default": "main-menu"
       }
     ],

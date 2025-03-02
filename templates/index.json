@@ -1,12 +1,101 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "sections":{
-    "banner":{
-      "type":"banner",
-      "settings":{}
+  "sections": {
+    "banner_iBFMGL": {
+      "type": "banner",
+      "blocks": {
+        "heading_text_AnNbVw": {
+          "type": "heading-text",
+          "settings": {
+            "heading": "Style with fashion"
+          }
+        },
+        "sub_text_jPRgen": {
+          "type": "sub-text",
+          "settings": {
+            "sub_text": "you can explore ans shop many differnt collection from various barands here"
+          }
+        },
+        "button_Bag77i": {
+          "type": "button",
+          "settings": {
+            "btn_url": "",
+            "btn_text": "Shop now!"
+          }
+        }
+      },
+      "block_order": [
+        "heading_text_AnNbVw",
+        "sub_text_jPRgen",
+        "button_Bag77i"
+      ],
+      "settings": {
+        "hero_img": "shopify://shop_images/hero_img.png",
+        "bg_img_1": "shopify://shop_images/banner-left.png",
+        "bg_img_2": "shopify://shop_images/banner-right.png"
+      }
     },
-    "brands":{
-      "type":"brands",
+    "brands": {
+      "type": "brands",
+      "blocks": {
+        "brand_kWdprc": {
+          "type": "brand",
+          "settings": {}
+        },
+        "brand_FhEGYr": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/brand_2.png"
+          }
+        },
+        "brand_keNnaq": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/brand_4.png"
+          }
+        },
+        "brand_dKDgLM": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/brand_5.png"
+          }
+        },
+        "brand_kJbr9E": {
+          "type": "brand",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "brand_kWdprc",
+        "brand_FhEGYr",
+        "brand_keNnaq",
+        "brand_dKDgLM",
+        "brand_kJbr9E"
+      ],
       "settings": {}
+    },
+    "featured": {
+      "type": "featured",
+      "settings": {
+        "main_img": "shopify://shop_images/featured-1.png",
+        "side_img_1": "shopify://shop_images/featured-5.png",
+        "side_img_2": "shopify://shop_images/featured-4.png",
+        "side_img_3": "shopify://shop_images/featured-3.png",
+        "side_img_4": "shopify://shop_images/featured-2.png"
+      }
     }
-  }, "order": ["banner","brands"]
+  },
+  "order": [
+    "banner_iBFMGL",
+    "brands",
+    "featured"
+  ]
 }
