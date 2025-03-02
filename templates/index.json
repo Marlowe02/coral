@@ -91,11 +91,21 @@
         "side_img_3": "shopify://shop_images/featured-3.png",
         "side_img_4": "shopify://shop_images/featured-2.png"
       }
+    },
+    "featured_products_hayaWb": {
+      "type": "featured-products",
+      "settings": {
+        "text": "Check out our latest products",
+        "collection": "frontpage",
+        "btn_text": "View All",
+        "btn_url": ""
+      }
     }
   },
   "order": [
     "banner_iBFMGL",
     "brands",
-    "featured"
+    "featured",
+    "featured_products_hayaWb"
   ]
 }

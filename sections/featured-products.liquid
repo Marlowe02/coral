@@ -1,0 +1,80 @@
+<section>
+  <div class="max-w-7xl mx-auto  text-center py-24 px-8 lg:px-0 ">
+    <h2 class="text-4xl font-medium tracking-wider">{{ section.settings.text | upcase }}</h2>
+    <div class=" grid grid-cols-4 gap-6 mt-18">
+      {% for item in section.settings.collection.products %}
+        <div>
+          <div>
+            <a href="{{ item.url }}">
+              <img
+                src="{{ item.featured_image | image_url }}"
+                alt="{{ item.title }}"
+                height=""
+                width=""
+                class="w-full  object-cover hover:scale-105 duration-150 transition-all"></a>
+
+          </div>
+          <div class="text-left p-2">
+            <a href="{{ item.url }}">
+              <p>{{ item.title }}</p>
+            </a>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-gray-500 ">{{ item.tags }}</p>
+              <div>
+                {% if item.compare_at_price %}
+                  <span class="text-gray-700 text-[12px] line-through">{{ item.compare_at_price | money }}</span>
+                  <span class="text-red-500">
+                    {{ item.price | money }}</span>
+                {% else %}
+                  <span>{{ item.price | money }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <a href="{{ section.settings.btn_url }}">
+      <button class="mt-12 mx-auto mx bg-slate-900 text-white py-3 px-7 cursor-pointer flex  hover:text-slate-800 hover:bg-white border-2 border-slate-900 duration-150 transition-all">{{ section.settings.btn_text }}</button>
+    </a>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Featured Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Heading",
+        "default": "Check out our latest products"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text",
+        "default": "View All"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button url"
+      }
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Featured Products"
+      }
+    ]
+  }
+{% endschema %}
