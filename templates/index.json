@@ -100,12 +100,55 @@
         "btn_text": "View All",
         "btn_url": ""
       }
+    },
+    "image_text_3fpXCU": {
+      "type": "image-text",
+      "blocks": {
+        "heading_text_xTdjaB": {
+          "type": "heading-text",
+          "settings": {
+            "heading": "Style with fashion"
+          }
+        },
+        "sub_text_PX7jWR": {
+          "type": "sub-text",
+          "settings": {
+            "sub_text": "Lustrous yet understated. The new eveningwear collection exclusively offered at the reopened Giorgio Armani boutique in LosAngeles."
+          }
+        },
+        "button_FWcixC": {
+          "type": "button",
+          "settings": {
+            "btn_url": "",
+            "btn_text": "Shop now!"
+          }
+        }
+      },
+      "block_order": [
+        "heading_text_xTdjaB",
+        "sub_text_PX7jWR",
+        "button_FWcixC"
+      ],
+      "settings": {
+        "main_img": "shopify://shop_images/featured-4.png"
+      }
+    },
+    "featured_products_aRnNxc": {
+      "type": "featured-products",
+      "settings": {
+        "text": "Check out our latest products",
+        "collection": "frontpage",
+        "btn_text": "View All",
+        "btn_url": ""
+      }
     }
   },
   "order": [
     "banner_iBFMGL",
     "brands",
     "featured",
-    "featured_products_hayaWb"
+    "featured_products_hayaWb",
+    "image_text_3fpXCU",
+    "featured_products_aRnNxc"
   ]
 }

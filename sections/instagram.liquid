@@ -1,0 +1,61 @@
+<section style="background: {{section.settings.bg_color}};" class="py-24 text-center">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-5xl">{{ section.settings.head_text }}</h2>
+    <div class="mt-12 flex justify-center items-center gap-4">
+      {% for block in section.blocks %}
+        {% if block.type == 'post' %}
+          <a href="{{ block.settings.url }}">
+            <div class="overflow-hidden">
+              <img
+                src="{{ block.settings.img | image_url }}"
+                alt=""
+                height=""
+                width=""
+                class="h-[150px] w-[150px] object-contain hover:scale-105 duration-250">
+            </div>
+          </a>
+
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Instagram",
+    "settings": [
+      {
+        "type": "text",
+        "id": "head_text",
+        "label": "Heading text",
+        "default": "Follow products and discounts on Instagram"
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "post",
+        "name": "Post",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Post image"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "Post URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram"
+      }
+    ]
+  }
+{% endschema %}
